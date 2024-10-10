@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Tus estilos personalizados después de Bootstrap -->
+    <link rel="stylesheet" href="../styles/styles.css">
+    
+    <title>Registro de Predios</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-4">Registro de Predios Agrícolas</h1>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nuevo Predio</h5>
+                        <form id="predioForm">
+                            <div class="mb-3">
+                                <label for="nombrePredio" class="form-label">Nombre del Predio:</label>
+                                <input type="text" class="form-control" id="nombrePredio" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="cultivo" class="form-label">Cultivo:</label>
+                                <select class="form-select" id="cultivo" required>
+                                    <option value="">Seleccione un cultivo</option>
+                                    <option value="maiz">Maíz</option>
+                                    <option value="frijol">Frijol</option>
+                                    <option value="cebolla">Cebolla</option>
+                                    <option value="papa">Papa</option>
+                                    <option value="arveja">Arveja</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="fechaSiembra" class="form-label">Fecha de Siembra:</label>
+                                <input type="date" class="form-control" id="fechaSiembra" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="area" class="form-label">Área (hectáreas):</label>
+                                <input type="number" class="form-control" id="area" step="0.01" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Guardar Predio</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Predios Registrados</h5>
+                        <div id="prediosContainer"></div>
+                        <button id="exportButton" class="btn btn-secondary mt-3">
+                            Exportar Datos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p> <em>Creado por Carlos Arevalo</em></p>
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    
+    <!-- Firebase Database -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+    
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Tu script -->
+    <script src="../script/script.js"></script>
+</body>
+</html>
